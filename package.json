@@ -1,0 +1,26 @@
+{
+  "name": "local_tools_v2",
+  "version": "1.2.0",
+  "description": "A new version of my local tools with more organised code",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChaituKNag/local_tools_v2.git"
+  },
+  "keywords": [
+    "version",
+    "2"
+  ],
+  "author": "NagaChaitanya Konada <knc@outlook.in>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ChaituKNag/local_tools_v2/issues"
+  },
+  "homepage": "https://github.com/ChaituKNag/local_tools_v2#readme",
+  "dependencies": {
+    "bower": "^1.8.0"
+  }
+}
