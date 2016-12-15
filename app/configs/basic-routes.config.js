@@ -5,6 +5,11 @@ module.exports = function (app) {
 
   // Home page
   app.get('/', function (req, res) {
-    res.render('basic/index');
+    res.render('basic/home');
+  })
+
+  // Login page
+  app.get('/login', function (req, res) {
+    res.render('basic/login');
   })
 }

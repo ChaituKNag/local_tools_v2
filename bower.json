@@ -1,0 +1,29 @@
+{
+  "name": "local_tools_v2",
+  "description": "A new version of my local tools with more organised code",
+  "main": "server.js",
+  "authors": [
+    "NagaChaitanya Konada <knc@outlook.in>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "version",
+    "2"
+  ],
+  "homepage": "https://github.com/ChaituKNag/local_tools_v2",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "angularjs#^1.6.0",
+    "angular-route": "^1.6.0",
+    "lodash": "^4.17.2",
+    "bootstrap": "v4.0.0-alpha.5",
+    "components-font-awesome": "^4.7.0",
+    "jquery": "^3.1.1"
+  }
+}
