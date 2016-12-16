@@ -1,7 +1,7 @@
 ##The packages I am using extensively:
 express - for routing and server initiation
 
-ejs - for security
+express-handlebars - for security
 
 mongoose - connectivity to mongoDB
 
