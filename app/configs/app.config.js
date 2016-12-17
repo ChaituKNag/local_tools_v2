@@ -1,8 +1,9 @@
-module.exports = function (app) {
+module.exports = function (app, passport) {
   var express = require('express');
   var morgan = require('morgan');
   var bodyParser = require('body-parser');
   var session = require('express-session');
+  var mongoose = require('mongoose');
   
   // since public is where all the front end lies.
 
@@ -28,5 +29,18 @@ module.exports = function (app) {
     resave: false,
     saveUninitialized: false
   }));
+
+  // since we need db connection before passport initialization
+  
+  mongoose.connect(require('./database.config').url);
+
+  // since we need to configure the passport
+  var configurePassport = require('./passport.config');
+  configurePassport(passport);
+
+  // since we need to attach the configured passport to app
+  app.use(passport.initialize());
+  app.use(passport.session());
+
 
 }

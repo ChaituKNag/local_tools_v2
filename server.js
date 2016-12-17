@@ -13,15 +13,21 @@ var express = require('express');
 app = express();
 
 /**
- *  Step 3: Do all the app common middleware in the app.config.js file
+ *  Step 3: Get the passport object for authentication
+ */
+
+var passport = require('passport');
+
+/**
+ *  Step 4: Do all the app common middleware in the app.config.js file
  *
  */
 
 var configApp = require('./app/configs/app.config');
-configApp(app);
+configApp(app, passport);
 
 /**
- *  Step 4: Configure basic routes
+ *  Step 5: Configure basic routes
  */
 
 var configBasicRoutes = require('./app/configs/basic-routes.config');
