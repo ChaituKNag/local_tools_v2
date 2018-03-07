@@ -1,4 +1,4 @@
-module.exports = function (app) { 
+module.exports = function (app, passport) { 
   
   var hbs = require('express-handlebars');
   var path = require('path'); // so we can join relative paths properly to get absolute path
@@ -19,10 +19,28 @@ module.exports = function (app) {
   // Home page
   app.get('/', function (req, res) {
     res.render('basic/home');
-  })
+  });
 
   // Login page
   app.get('/login', function (req, res) {
     res.render('basic/login');
-  })
+  });
+
+  // When user submits login request in /login page
+  app.post('/login', passport.authenticate('local-login', {
+      successRedirect : '/', // redirect to the secure profile section
+      failureRedirect : '/login', // redirect back to the signup page if there is an error
+      failureFlash : true // allow flash messages
+  }));
+
+  // A catch all route
+  app.use('*', function (req, res, next) {
+    if (req.isAuthenticated()) {
+      console.log(req.user);
+      res.redirect('/');
+    } else {
+      res.redirect('/login');
+    }
+    //next();
+  });
 }

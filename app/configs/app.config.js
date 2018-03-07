@@ -4,6 +4,7 @@ module.exports = function (app, passport) {
   var bodyParser = require('body-parser');
   var session = require('express-session');
   var mongoose = require('mongoose');
+  var flash = require('connect-flash');
   
   // since public is where all the front end lies.
 
@@ -42,5 +43,6 @@ module.exports = function (app, passport) {
   app.use(passport.initialize());
   app.use(passport.session());
 
+  app.use(flash()); // use connect-flash for flash messages stored in session  
 
 }

@@ -31,7 +31,7 @@ configApp(app, passport);
  */
 
 var configBasicRoutes = require('./app/configs/basic-routes.config');
-configBasicRoutes(app);
+configBasicRoutes(app, passport);
 
 /**
  *  Step last: start the server
